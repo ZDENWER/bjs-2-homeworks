@@ -22,12 +22,14 @@ Student.prototype.getAverage = function () {
 		return 0
 	};
 
-	this.marks.reduce((acc, value) => acc + value);
+	return this.marks.reduce((acc, value) => acc + value) / this.marks.length;
 }
 
 Student.prototype.exclude = function (reason) {
-  
+  delete this.marks;
+  delete this.subject;
+  this.excluded = reason;
 }
 
-let student1 = new Student("Василиса", "женский", 19);
-let student2 = new Student("Артём", "мужской", 25);	
+// let student1 = new Student("Василиса", "женский", 19);
+// let student2 = new Student("Артём", "мужской", 25);	
